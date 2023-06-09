@@ -6,10 +6,15 @@
 //2)статические
 //не имеют доступ к полям основного класса
 //используются при группировке по логике
-//обычно публичные
+//обычно публичные для использования извне
+
 //3)Вложенные в метод классы -  похоже на аналог анонимного класса
+//дотсуп возможен только к константам
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Electrocar ecar = new Electrocar(1);
+        ecar.start();
+        Electrocar.Battery battery = new Electrocar.Battery();
+        battery.chargeBattery();
     }
 }
